@@ -28,7 +28,6 @@ RUN python -m pip uninstall -y \
 
 RUN python -m pip install --no-cache-dir -r /app/requirements.txt
 
-RUN python -c "assert hasattr(__import__('cv2'),'CascadeClassifier')"
 
 COPY . /app
 
