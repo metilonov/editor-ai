@@ -18,7 +18,7 @@ RUN python -m pip install --no-cache-dir "numpy>=1.26,<3"
 RUN python -m pip install --upgrade pip setuptools wheel \
     && python -m pip install --no-cache-dir -r /app/requirements.txt
 
-RUN python -c "import numpy; print("NumPy installed:", numpy.__version__)"
+RUN python -c "import numpy; print(numpy.__version__)"
 COPY . /app
 
 RUN mkdir -p /app/data /app/temp /app/output
