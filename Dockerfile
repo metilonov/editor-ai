@@ -13,10 +13,12 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     && rm -rf /var/lib/apt/lists/*
 
 COPY requirements.txt /app/requirements.txt
+RUN python -m pip install --no-cache-dir "numpy>=1.26,<3"
 
 RUN python -m pip install --upgrade pip setuptools wheel \
     && python -m pip install --no-cache-dir -r /app/requirements.txt
 
+RUN python -c "import numpy; print("NumPy installed:", numpy.__version__)"
 COPY . /app
 
 RUN mkdir -p /app/data /app/temp /app/output
