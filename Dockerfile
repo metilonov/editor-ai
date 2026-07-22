@@ -23,4 +23,4 @@ COPY . /app
 
 RUN mkdir -p /app/data /app/temp /app/output
 
-CMD ["python", "-m", "editai.cli.main"]
+CMD ["python", "run.py"]
